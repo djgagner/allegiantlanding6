@@ -315,5 +315,37 @@ var _wpcf7 = {"loaderUrl":"http:\/\/www.allegianttrucking.com\/wp-content\/plugi
 </script>
 <script type='text/javascript' src='../wp-content/plugins/contact-form-7/includes/js/scripts.js@ver=4.3.1'></script>
 <script type='text/javascript' src='../wp-content/plugins/bootstrap-for-contact-form-7/assets/scripts.min.js@ver=1.3.0'></script>
+<script>
+function read_cookie(key)
+{
+    var result;
+    return (result = new RegExp('(?:^|; )' + encodeURIComponent(key) + '=([^;]*)').exec(document.cookie)) ? (result[1]) : null;
+}
+	var things={}
+	things.name = read_cookie("name")
+	things.phone = read_cookie("phone")
+	things.email = read_cookie("email")
+	things.to = read_cookie("to")
+	things.from = read_cookie("from")
+	things.make = read_cookie("make")
+	things.model = read_cookie("model")
+	things.condition = read_cookie("condition")
+	things.transport_type = read_cookie("transport_type")
+	things.year = read_cookie("year")
+	things.pickupdate = read_cookie("pickupdate")
+	console.log(things)
+	document.getElementById("dj1").innerHTML=things.year + " " + things.make + " "+things.model
+	document.getElementById("dj2").innerHTML=things.from
+	document.getElementById("dj3").innerHTML=things.to
+	document.getElementById("dj4").innerHTML=things.make
+	document.getElementById("dj5").innerHTML=things.model
+	document.getElementById("dj6").innerHTML=things.condition
+	document.getElementById("dj7").innerHTML=things.transport_type
+	document.getElementById("dj11").innerHTML=things.name
+	document.getElementById("dj9").innerHTML=things.email
+	document.getElementById("dj10").innerHTML=things.phone
+	document.getElementById("dj8").innerHTML=things.pickupdate
+	
+</script>
 </body>
 </html>
