@@ -534,7 +534,14 @@ setInterval(function(){
 			    		console.log("city", data.address_components[i].long_name)
 			    		document.getElementById('dropoff_city').value=data.address_components[i].long_name
 			    	}
+			    	if(data.address_components[i].types.indexOf("dropoff_zip")!=-1)
+			    	{
+			    		document.getElementById('dropoff_zip').value=data.address_components[i].long_name
+			    	}
 			    	document.getElementById('dropoff_country_id').value=1
+			    	//"postal_code"
+			    	//
+			    	//pickup_zip
 			    }
 			},
 			error : function(err) {
@@ -569,6 +576,10 @@ setInterval(function(){
 			    	{
 			    		console.log("city", data.address_components[i].long_name)
 			    		document.getElementById('pickup_city').value=data.address_components[i].long_name
+			    	}
+			    	if(data.address_components[i].types.indexOf("pickup_zip")!=-1)
+			    	{
+			    		document.getElementById('pickup_zip').value=data.address_components[i].long_name
 			    	}
 			    	document.getElementById('pickup_country_id').value=1
 			    }
@@ -748,6 +759,8 @@ function changerizer(id)
 		<td><input type="text" name="pickup_city" id="pickup_city" value="" size="30" /></td>
 	</tr>
 	<tr>
+		<input type="text" name="pickup_zip" id="pickup_zip" value="" size="30" /></td>
+		<input type="text" name="dropoff_zip" id="dropoff_zip" value="" size="30" />
 		<td>State:</td>
 		<td>
 			<select name="pickup_state_code" id="pickup_state_code">
